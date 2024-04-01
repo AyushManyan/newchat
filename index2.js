@@ -4,7 +4,7 @@ const fs=require('fs');
 const server=require('socket.io');
 
 
-const io = server(app.listen(3000));
+const io = server(app.listen(3000 || process.env.PORT));
 
 app.get('/', (req, res) => {
     fs.readFile('chatweb.html', 'utf8', function(err, data) {
